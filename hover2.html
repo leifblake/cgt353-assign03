@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Leif Blake - CGT353 Assign03</title>
+    <style type="text/css">
+        body {
+            background-color: #232323;
+            margin: 0;
+            overflow-x: hidden;
+            font-family: 'Futura Bold Italic', sans-serif;
+        }
+
+        @font-face {
+            font-family: 'Futura Bold Italic';
+            src: url('images/futuraBoldItalic.ttf') format('truetype');
+        }
+
+        .bg {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            width: 200%;
+            height: 200vh;
+            background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+            background-repeat: repeat;
+            animation: bg-animation .2s infinite;
+            opacity: 1;
+            filter: contrast(1.5); 
+            visibility: visible;
+        }
+
+        @keyframes bg-animation {
+            0% { transform: translate(0,0) }
+            10% { transform: translate(-5%,-5%) }
+            20% { transform: translate(-10%,5%) }
+            30% { transform: translate(5%,-10%) }
+            40% { transform: translate(-5%,15%) }
+            50% { transform: translate(-10%,5%) }
+            60% { transform: translate(15%,0) }
+            70% { transform: translate(0,10%) }
+            80% { transform: translate(-15%,0) }
+            90% { transform: translate(10%,5%) }
+            100% { transform: translate(5%,0) }
+        }
+
+        #logo {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #logo img {
+            max-width: 500px; 
+            height: auto;
+        }
+
+        #wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; 
+            margin: 20px auto;
+            max-width: 1200px; 
+        }
+
+        div[id^="th"] {
+            width: 225px;
+            height: 300px;
+            border: 1px solid #aaa;
+            text-align: center;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            opacity: .6;
+        }
+
+        div#th1 { background-image: url("images/drew1.png"); }
+        div#th2 { background-image: url("images/drew2.png"); }
+        div#th3 { background-image: url("images/drew3.png"); }
+        div#th4 { background-image: url("images/drew4.png"); }
+        div#th5 { background-image: url("images/enya1.png"); }
+        div#th6 { background-image: url("images/enya2.png"); }
+        div#th7 { background-image: url("images/enya3.png"); }
+        div#th8 { background-image: url("images/enya4.png"); }
+        div#th9 { background-image: url("images/new1.png"); }
+        div#th10 { background-image: url("images/new2.png"); }
+        div#th11 { background-image: url("images/new3.png"); }
+        div#th12 { background-image: url("images/new4.png"); }
+
+        div[id^="th"]:hover {
+            opacity: 1;
+        }
+
+        .bottomImg {
+            display: block; 
+            max-width: 25%; 
+            height: auto; 
+            margin: 30px auto 0; 
+        }
+
+        
+        .link-text {
+            text-align: center;
+            color: white;
+            font-size: 18px; 
+            margin-top: 20px;
+            font-family: 'Futura Bold Italic', sans-serif;
+        }
+
+        .link-text a {
+            color: white;
+            text-decoration: none;
+            font-style: italic;
+        }
+
+        .link-text a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+
+    <div id="logo">
+        <img src="images/eilogo.png" alt="Logo">
+    </div>
+
+    <div id="wrapper">
+        <div id="th1"></div>
+        <div id="th2"></div>
+        <div id="th3"></div>
+        <div id="th4"></div>
+        <div id="th5"></div>
+        <div id="th6"></div>
+        <div id="th7"></div>
+        <div id="th8"></div>
+        <div id="th9"></div>
+        <div id="th10"></div>
+        <div id="th11"></div>
+        <div id="th12"></div>
+    </div>
+
+    <div class="link-text">
+        Link to <a href="hover.html">Part 1 HERE</a>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("div").css("border-radius", "10px");
+            $("div").css("-moz-border-radius", "10px");
+            
+            $("div[id!='wrapper']").css("opacity", .6);
+            
+            $("div[id!='wrapper']").hover(
+                function() {
+                    $(this).animate({"opacity": 1});
+                }, 
+                function() {
+                    $(this).animate({"opacity": .6});
+                }
+            );
+        });
+    </script>
+    <img class="bottomImg" src="images/eibottom.png" alt="Footer">
+</body>
+</html>
